@@ -17,7 +17,7 @@ public class Main {
         Book book = new Book("Wiedźmin", "Andrzej Sapkowski", "978-83-7578-005-6", 5);
         bookTest(book);
 
-        User user = new User("Jan Kowlaski", 1000);
+        User user = new User("Jan Kowalski", 1000);
         userTest(user);
 
         Loan loan = new Loan(book, user, LocalDate.now());
@@ -39,15 +39,28 @@ public class Main {
 
         // Testowanie toString()
         String expected = "Book{Title='Wiedźmin', Author='Andrzej Sapkowski', ISBN='978-83-7578-005-6', Available Copies=10}";
-        assert expected.equals(book.toString()) : "Metoda toString() nie zwraca oczekiwanego wyniku";
+        assert expected.equals(book.toString()) : "Metoda toString() w klasie Book nie zwraca oczekiwanego wyniku";
 
         System.out.println("Book test succeed");
     }
 
     private static void userTest(User user){
 
-        String expected = "User{Name='Jan Kowlaski', Card Number='1000'}";
-        assert expected.equals(user.toString()) : "Metoda toString() nie zwraca oczekiwanego wyniku";
+        //Testowanie konstruktora
+        String nameExpected = "Jan Kowalski";
+        int cardNumberExpecred = 1000;
+        assert nameExpected.equals(user.getName()): "Użytkownik powinien być Jan Kowalski";
+        assert  cardNumberExpecred == user.getCardNumber() : "Numer karty powinien być 1000";
+
+        //Testowanie setterów
+        user.setName("Jakub Nowak");
+        assert user.getName().equals("Jakub Nowak") : "Użytkownik po zmianie powinien być Jakub Nowak";
+        user.setCardNumber(1234);
+        assert user.getCardNumber() == 1234 : "Numer karty powinien być 1234";
+
+        //Testowanie toString()
+        String expected = "User{Name='Jakub Nowak', Card Number='1234'}";
+        assert expected.equals(user.toString()) : "Metoda toString() w klasie User nie zwraca oczekiwanego wyniku";
         System.out.println("User test succeed");
     }
 
