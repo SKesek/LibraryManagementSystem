@@ -12,6 +12,6 @@ Umożliwia dodawanie książek, wypożyczanie, zwracanie oraz przeglądanie dost
 
 ## Technologie
 - Java
-- JUnit (do testów)
+- JUnit (do testów, do wdrożenia)
 
-PROJEKT W FAZIE PRODUKCJI
+# PROJEKT W FAZIE PRODUKCJI
