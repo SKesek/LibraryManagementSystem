@@ -3,7 +3,7 @@ package org.example.elements;
 public class User {
 
     private String name;
-    private int cardNumber;
+    private Integer cardNumber;
 
     public User(String name, int cardNumber){
         this.name = name;
@@ -14,9 +14,10 @@ public class User {
         return name;
     }
 
-    public int getCardNumber() {
+    public Integer getCardNumber() {
         return cardNumber;
     }
+
 
     public void setName(String name) {
         this.name = name;
@@ -33,6 +34,5 @@ public class User {
                 ", Card Number='" + cardNumber + '\'' +
                 '}';
     }
-
 
 }
