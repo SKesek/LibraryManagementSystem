@@ -1,8 +1,6 @@
 package org.example;
 
-import org.example.elements.Book;
-import org.example.elements.Loan;
-import org.example.elements.User;
+import org.example.elements.*;
 
 
 import java.time.LocalDate;
@@ -15,17 +13,22 @@ public class Main {
 
 
         //Welcome
-        System.out.println("Hello in Library Managment System!");
+        Library library = new Library();
+        Menu menu = new Menu(library);
 
-        Book book = new Book("Wiedźmin", "Andrzej Sapkowski", "978-83-7578-005-6", 5);
-        AssertTest.bookTest(book);
+        Book book = new Book("Wiedźmin", "Andrzej Sapkowski", "123456", 1);
+        //AssertTest.bookTest(book);
+        library.addBook(book);
 
         User user = new User("Jan Kowalski", 1000);
-        AssertTest.userTest(user);
+        //AssertTest.userTest(user);
+        library.addUser(user);
 
         Loan loan = new Loan(book, user, LocalDate.now());
-        AssertTest.loanTest(book, user, loan);
+        //AssertTest.loanTest(book, user, loan);
 
+        //AssertTest.libraryTest(book, user, library);
 
+        menu.start();
     }
 }

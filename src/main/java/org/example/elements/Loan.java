@@ -8,12 +8,14 @@ public class Loan {
     private User user;
     private LocalDate loanDate;
     private LocalDate returnDate;
+    private boolean returned;
 
     public Loan(Book book, User user, LocalDate localDate){
         this.book = book;
         this.user = user;
         this.loanDate = localDate;
         this.returnDate = null;
+        this.returned = false;
     }
 
     public Book getBook() {
@@ -46,6 +48,14 @@ public class Loan {
 
     public void setReturnDate(LocalDate returnDate) {
         this.returnDate = returnDate;
+    }
+
+    public void setReturned(boolean returned) {
+        this.returned = returned;
+    }
+
+    public boolean isReturned(){
+        return returned;
     }
 
     @Override

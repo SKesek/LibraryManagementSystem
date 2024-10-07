@@ -3,19 +3,19 @@ package org.example.elements;
 public class User {
 
     private String name;
-    private Integer cardNumber;
+    private Integer userCardNumber;
 
-    public User(String name, int cardNumber){
+    public User(String name, Integer cardNumber){
         this.name = name;
-        this.cardNumber = cardNumber;
+        this.userCardNumber = cardNumber;
     }
 
     public String getName() {
         return name;
     }
 
-    public Integer getCardNumber() {
-        return cardNumber;
+    public Integer getUserCardNumber() {
+        return userCardNumber;
     }
 
 
@@ -23,15 +23,15 @@ public class User {
         this.name = name;
     }
 
-    public void setCardNumber(int cardNumber) {
-        this.cardNumber = cardNumber;
+    public void setUserCardNumber(int userCardNumber) {
+        this.userCardNumber = userCardNumber;
     }
 
     @Override
     public String toString(){
         return "User{" +
                 "Name='" + name + '\'' +
-                ", Card Number='" + cardNumber + '\'' +
+                ", Card Number='" + userCardNumber + '\'' +
                 '}';
     }
 
