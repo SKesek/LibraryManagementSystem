@@ -8,14 +8,14 @@ public class Loan {
     private User user;
     private LocalDate loanDate;
     private LocalDate returnDate;
-    private boolean returned;
+    private boolean loaded;
 
     public Loan(Book book, User user, LocalDate localDate){
         this.book = book;
         this.user = user;
         this.loanDate = localDate;
         this.returnDate = null;
-        this.returned = false;
+        this.loaded = false;
     }
 
     public Book getBook() {
@@ -50,12 +50,12 @@ public class Loan {
         this.returnDate = returnDate;
     }
 
-    public void setReturned(boolean returned) {
-        this.returned = returned;
+    public void setLoaded(boolean loaded) {
+        this.loaded = loaded;
     }
 
-    public boolean isReturned(){
-        return returned;
+    public boolean isLoaded(){
+        return loaded;
     }
 
     @Override
@@ -65,6 +65,7 @@ public class Loan {
                 ", user=" + user.getName() +
                 ", loanDate=" + loanDate +
                 ", returnDate=" + (returnDate != null ? returnDate : "Not returned") +
+                ", loaded=" + (isLoaded()) +
                 '}';
     }
 }

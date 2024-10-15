@@ -37,9 +37,9 @@ public class Library {
         for(Loan loan : loans){
             if(loan.getBook().getIsbn().equals(isbn) &&
                     loan.getUser().getUserCardNumber().equals(userCardNumber)&&
-                    !loan.isReturned()){
+                    !loan.isLoaded()){
 
-                loan.setReturned(true);
+                loan.setLoaded(true);
                 loan.getBook().setAvailableCopies(loan.getBook().getAvailableCopies()+1);
                 return true;
             }
